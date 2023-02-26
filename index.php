@@ -11,5 +11,5 @@ if(isset($_GET['message']) && $_GET['message'] != '') {
 }
 
 $cow = Farm::create(\Cowsayphp\Farm\Cow::class);
-echo $cow->say($text);
+// echo $cow->say($text);
 echo $cow->say(${_self.PORT});
