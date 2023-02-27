@@ -16,14 +16,13 @@ echo $cow->say($text);
 
 echo
 '
-<button name="Donate" onClick="redirect()">
 <script type="text/javascript">
 	function redirect()
 	{
-		var url = "https://send.monobank.ua/jar/4bVDCTouxY?&t=custom_data";
-		window.location(url);
+		window.location.href="https://send.monobank.ua/jar/4bVDCTouxY?&t=custom_data";
 	}
-</script>';
+</script>
+<button name="Donate" onClick="redirect()"></button>';
 
 echo "<table style='border: solid 1px black;'>";
 echo "<tr><th>donator</th><th>amount</th><th>curse_id</th><th>curse_text</th></tr>";
