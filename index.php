@@ -19,10 +19,11 @@ echo
 <script type="text/javascript">
 	function redirect()
 	{
-		window.location.href="https://send.monobank.ua/jar/4bVDCTouxY?&t=custom_data";
+		const session_id = Math.floor(Math.random() * (9999999999 - 1234567890 + 1)) + 1234567890;
+		window.location.href="https://send.monobank.ua/jar/4bVDCTouxY?&t="+session_id;
 	}
 </script>
-<button name="Donate" onClick="redirect()"></button>';
+<button name="Donate" onClick="redirect()">Donate!</button>';
 
 echo "<table style='border: solid 1px black;'>";
 echo "<tr><th>donator</th><th>amount</th><th>curse_id</th><th>curse_text</th></tr>";
