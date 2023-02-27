@@ -12,7 +12,7 @@ if(isset($_GET['message']) && $_GET['message'] != '') {
 
 $cow = Farm::create(\Cowsayphp\Farm\Cow::class);
 // echo $cow->say($text);
-echo "URL1: " . $_ENV['DATABASE_URL');
+echo "URL1: " . $_ENV['DATABASE_URL'];
 echo "URL2: " . env('DATABASE_URL');
 
 try {
