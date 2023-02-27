@@ -61,7 +61,11 @@ try {
 		  $options);
 	
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $stmt = $conn->prepare("SELECT d.donator, d.amount, d.curse_id, c.text as curse_text FROM donations d join curses c on c.id = d.curse_id");
+  $stmt = $conn->prepare(
+	  "SELECT d.donator, d.amount, d.curse_id, c.text as curse_text 
+	  FROM donations d 
+	  join curses c on c.id = d.curse_id
+	  order by d.date_added desc");
   $stmt->execute();
   $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
   foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
