@@ -2,6 +2,7 @@
 require __DIR__ . '/vendor/autoload.php';
 
 use Cowsayphp\Farm;
+use Config;
 
 header('Content-Type: text/plain');
 
@@ -12,7 +13,7 @@ if(isset($_GET['message']) && $_GET['message'] != '') {
 
 $cow = Farm::create(\Cowsayphp\Farm\Cow::class);
 // echo $cow->say($text);
-echo "URL: " . $DATABASE_URL;
+echo "URL: " . config('DATABASE_URL');
 
 try {
   $conn = new PDO($DATABASE_URL, $DATABASE_USERNAME, $DATABASE_PASSWORD);
