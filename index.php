@@ -12,11 +12,9 @@ if(isset($_GET['message']) && $_GET['message'] != '') {
 
 $cow = Farm::create(\Cowsayphp\Farm\Cow::class);
 // echo $cow->say($text);
-echo "URL1: " . $_ENV['DATABASE_URL'];
-echo "URL2: " . env('DATABASE_URL');
 
 try {
-  $conn = new PDO($DATABASE_URL, $DATABASE_USERNAME, $DATABASE_PASSWORD);
+  $conn = new PDO($_ENV['DATABASE_URL'], $_ENV['DATABASE_USERNAME'], $_ENV['DATABASE_PASSWORD']);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   echo "Connected successfully";
 } catch(PDOException $e) {
