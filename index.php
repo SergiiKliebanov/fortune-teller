@@ -13,7 +13,7 @@ if(isset($_GET['message']) && $_GET['message'] != '') {
 $cow = Farm::create(\Cowsayphp\Farm\Cow::class);
 // echo $cow->say($text);
 
-$conn = new mysqli($db_host, $db_username, $db_password);
+$conn = new mysqli($DB_HOST, $DB_USERNAME, $DB_PASSWORD);
 
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
