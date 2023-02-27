@@ -15,7 +15,7 @@ echo $cow->say($text);
 */
 
 echo "<table style='border: solid 1px black;'>";
-echo "<tr><th>donator</th><th>amount</th><th>curse_id</th></tr>";
+echo "<tr><th>donator</th><th>amount</th><th>curse_id</th></tr>text</th></tr>";
 
 class TableRows extends RecursiveIteratorIterator {
   function __construct($it) {
@@ -50,7 +50,7 @@ try {
 		  $options);
 	
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $stmt = $conn->prepare("SELECT donator, amount, curse_id FROM donations");
+  $stmt = $conn->prepare("SELECT d.donator, d.amount, d.curse_id, c.text FROM donations d join curses c on c.id = d.curse_id");
   $stmt->execute();
   $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
   foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
