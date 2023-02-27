@@ -21,7 +21,7 @@ try {
   // $conn = new PDO($_ENV['DATABASE_URL'], $_ENV['DATABASE_USERNAME'], $_ENV['DATABASE_PASSWORD'],$options);
   $conn = new PDO("mysql:host=" . $_ENV['DATABASE_HOSTNAME'] . 
 		  ";dbname=" . $_ENV['DATABASE_DATABASE'] .
-		  ";port= . $_ENV['DATABASE_PORT'], 
+		  ";port=" . $_ENV['DATABASE_PORT'], 
 		  $_ENV['DATABASE_USERNAME'], 
 		  $_ENV['DATABASE_PASSWORD'],
 		  $options);
