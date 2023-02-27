@@ -20,7 +20,7 @@ echo
 	function redirect()
 	{
 		const session_id = Math.floor(Math.random() * (9999999999 - 1234567890 + 1)) + 1234567890;
-		window.location.href="https://send.monobank.ua/jar/4bVDCTouxY?&t="+session_id;
+		window.open("https://send.monobank.ua/jar/4bVDCTouxY?&t="+session_id, "_blank");
 	}
 </script>
 <button name="Donate" onClick="redirect()">Donate!</button>';
